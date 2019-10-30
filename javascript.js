@@ -57,7 +57,67 @@
   trainFreq = $("#inputFreq").val();
   console.log(trainFreq);
 
+// adding function to input data into database that pushes each item into a new row on interface
+// this needs to be within the button click function so it can be pushed after the user CLICKS submit
+database.ref().push({
+  trainName: trainName,
+  trainDestination: trainDestination,
+  trainTime: trainTime,
+  trainFreq: trainFreq
+});
+
+});
+
+database.ref().on("child_added", function(snapshot){
+  var sv = snapshot.val();
+
+  console.log(sv.trainName)
+  console.log(sv.trainDestination)
+  console.log(sv.trainTime)
+  console.log(sv.trainFreq)
+
+  //make a new row variable
+  var newRow = $("<tr>")
+  //make multiple TD rows var for train name, des, time, freq
+  var nameTD = $("<td>")
+  var desTD = $("<td>")
+  var timeTD = $("<td>")
+  var freqTD = $("<td>")
+  var minsTD = $("<td>")
+
+  //make text visible using the sv variable 
+   nameTD.text(sv.trainName);
+   //append to the new row
+   newRow.append(nameTD);
+   
+   //make text visible
+   desTD.text(sv.trainDestination);
+   //append to the new row
+   newRow.append(desTD);
+
+    //make text visible
+    freqTD.text(sv.trainFreq);
+    //append to the new row
+    newRow.append(freqTD);
+
+   //make text visible
+   timeTD.text();
+   //append to the new row
+   newRow.append(timeTD);
+
+  
+
+  //make text visible 
+  minsTD.text()
+  //append to new row
+  newRow.append(minsTD);
 
 
-  });
+  //append new row variable to tbody
+  $("tbody").append(newRow)
+
+
+});
+
+
 
