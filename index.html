@@ -25,10 +25,10 @@
 
 <body>
 
-        <div class="jumbotron jumbotron-fluid bg-info headerBox">
+        <div class="jumbotron jumbotron-fluid bg-warning headerBox">
                 <div class="container">
-                  <h1 class="display-4 text-light"> <i class="fas fa-train"></i> Train Schedule</h1>
-                  <!-- <p class="lead text-light">Schedule today.<i class="fas fa-hourglass-start"></i></p> -->
+                  <h1 class="display-4 text-dark font-weight-bold">Philadelphia Transit</h1>
+                  <p class="lead text-dark">making transporting easy <i class="fas fa-train"></i></p>
                 </div>
                </div>
 
@@ -39,11 +39,11 @@
 
     <div class="container formcontainer">
         <div class="card searchP">
-            <div class="card-header">Current Train Schedule</div>
+            <div class="card-header bg-danger font-weight-bold">Current Train Schedule</div>
             <div class="employeeInput card-body">
-                <table class="table">
+                <table class="table font-weight-light">
                     <thead>
-                        <tr>
+                        <tr class="font-weight-light">
                             <th scope="col">Train name</th>
                             <th scope="col">Destination</th>
                             <th scope="col">Frequency (mins)</th>
@@ -63,7 +63,7 @@
     <br>
     <div class="container formcontainer">
         <div class="card searchP">
-            <div class="card-header">Add Train</div>
+            <div class="card-header bg-danger font-weight-bold">Add Train</div>
             <div class="employeeInput card-body">
                 <form>
                     <div class="">
@@ -89,8 +89,8 @@
                         <input type="text" class="form-control" id="inputFreq" placeholder="">
                     </div>
 
-                    <button type="button" class="btn btn-info submitButton" id="add-giph"> Submit</button>
-                    <button type="button" class="btn btn-info clearResultsButton">Clear Results</button>
+                    <button type="button" class="btn btn-danger submitButton text-dark" id="add-giph">Add New</button>
+                    
                 </form>
             </div>
         </div>
